@@ -33,42 +33,26 @@
 
 \usepackage{listings}
 
-\def\fc{3.2cm}
-\def\sc{4cm}
-\def\dfc{6.4cm}
-\def\dsc{8cm}
-
-
 
 \begin{document}
 
-
 \raggedright
 \footnotesize
-
 
 \setlength{\premulticols}{10pt}
 \setlength{\postmulticols}{10pt}
 \setlength{\multicolsep}{10pt}
 \setlength{\columnsep}{10pt}
 
-
-
-
 \begin{multicols}{2}
-
-
-
-
-%git clone https://github.com/davidoc/todo.txt-vim.git
 
 \begin{center}
      \LARGE{\textbf{\color{black}Git \color{red}Cheat Sheet}} \\
 \end{center}
 
 \begin{tabular}{p{12cm}}
-\sthead{Import from SVN}
-    \cc{\lstinline{git svn clong -s SVN_REPO_URL LOCAL_DIR \&\& cd LOCAL_DIR}}
+\sthead{Import from SVN into existing repository}
+    \cc{\lstinline{git svn clone --shared SVN_REPO_URL LOCAL_DIR \&\& cd LOCAL_DIR}}
     \cc{\lstinline{git remote add origin git@github.com:GITHUB_USERNAME/REPO_NAME.git}}
     \cc{git push origin master}
     \cc{\lstinline{git svn --authors-file=path/to/authors_file clone SVN_REPO_URL LOCAL_DIR}}
@@ -76,186 +60,44 @@
 
 
 \begin{tabular}{p{12cm}}
-\sthead{Init existing repo}
-    \cc{\lstinline{mkdir NewDir && git init}}
+\sthead{Init existing repository}
+    \cc{\lstinline{mkdir NewDir && cd NewDir && git init}}
     \cc{git commit -m 'first commit'}
     \cc{git remote add origin git@github.com:Treehopper/Git-Cheat-Sheet.git}
-    \cc{git push -u origin master}
+    \cc{git push --set-upstream origin master}
+\end{tabular}
+
+\begin{tabular}{p{12cm}}
+\sthead{Clone existing repository}
+    \cc{git clone git@github.com:Treehopper/Git-Cheat-Sheet.git}
 \end{tabular}
 
 \end{multicols}
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
 \begin{multicols}{3}
 
+\begin{tabular}{p{3.2cm} p{4cm}}
+\thead{Basics}
+    \dc{add file}{git add foobar.txt}
+    \dc{show changes}{\lstinline{git log && git diff}}
+    \dc{commit changes}{git commit}
+    \dc{\emph{transmit} changes}{git push}
+    \dc{receive changes}{git pull \#(or git fetch)}
+\end{tabular}
 
-
-%git clone https://github.com/davidoc/todo.txt-vim.git
-
-
-\begin{tabular}{p{\fc} p{\sc}}
+\begin{tabular}{p{3.2cm} p{4cm}}
 \thead{Modifications}
     \dc{real short status}{git status -uno -s}
     \dc{concise logging info}{git log -9 --oneline --color=always --decorate=no --stat --graph --date-order}
 \end{tabular}
 
-\begin{tabular}{p{\fc} p{\sc}}
-\thead{Undo/Change Commits}
-\dc{revert commited changes}{git revert HEAD "foobar.txt" \lb{}
-                                                                    git checkout HEAD foobar.txt}
-    \dc{check out latest version}{git checkout HEAD foobar.txt}
-        \dc{Change latest commit}{git commit --amend}
-\end{tabular}
-
 \begin{tabular}{p{3.2cm} p{4cm}}
 \thead{Undo/Change Commits}
-\dc{revert commited changes}{git revert HEAD "foobar.txt" \lb{}
-                                                                    git checkout HEAD foobar.txt}
+\dc{revert committed changes}{git revert HEAD "foobar.txt" \lb{} git checkout HEAD foobar.txt}
     \dc{check out latest version}{git checkout HEAD foobar.txt}
-        \dc{Change latest commit}{git commit --amend}
-\end{tabular}
-
-\begin{tabular}{p{3.2cm} p{4cm}}
-\thead{Undo/Change Commits}
-\dc{revert commited changes}{git revert HEAD "foobar.txt" \lb{}
-                                                                    git checkout HEAD foobar.txt}
-    \dc{check out latest version}{git checkout HEAD foobar.txt}
-        \dc{Change latest commit}{git commit --amend}
-\end{tabular}
-
-\begin{tabular}{p{3.2cm} p{4cm}}
-\thead{Undo/Change Commits}
-\dc{revert commited changes}{git revert HEAD "foobar.txt" \lb{}
-                                                                    git checkout HEAD foobar.txt}
-    \dc{check out latest version}{git checkout HEAD foobar.txt}
-        \dc{Change latest commit}{git commit --amend}
-\end{tabular}
-
-\begin{tabular}{p{3.2cm} p{4cm}}
-\thead{Undo/Change Commits}
-\dc{revert commited changes}{git revert HEAD "foobar.txt" \lb{}
-                                                                    git checkout HEAD foobar.txt}
-    \dc{check out latest version}{git checkout HEAD foobar.txt}
-        \dc{Change latest commit}{git commit --amend}
-\end{tabular}
-
-\begin{tabular}{p{3.2cm} p{4cm}}
-\thead{Undo/Change Commits}
-\dc{revert commited changes}{git revert HEAD "foobar.txt" \lb{}
-                                                                    git checkout HEAD foobar.txt}
-    \dc{check out latest version}{git checkout HEAD foobar.txt}
-        \dc{Change latest commit}{git commit --amend}
-\end{tabular}
-
-\begin{tabular}{p{3.2cm} p{4cm}}
-\thead{Undo/Change Commits}
-\dc{revert commited changes}{git revert HEAD "foobar.txt" \lb{}
-                                                                    git checkout HEAD foobar.txt}
-    \dc{check out latest version}{git checkout HEAD foobar.txt}
-        \dc{Change latest commit}{git commit --amend}
-\end{tabular}
-
-\begin{tabular}{p{3.2cm} p{4cm}}
-\thead{Undo/Change Commits}
-\dc{revert commited changes}{git revert HEAD "foobar.txt" \lb{}
-                                                                    git checkout HEAD foobar.txt}
-    \dc{check out latest version}{git checkout HEAD foobar.txt}
-        \dc{Change latest commit}{git commit --amend}
-\end{tabular}
-
-\begin{tabular}{p{3.2cm} p{4cm}}
-\thead{Undo/Change Commits}
-\dc{revert commited changes}{git revert HEAD "foobar.txt" \lb{}
-                                                                    git checkout HEAD foobar.txt}
-    \dc{check out latest version}{git checkout HEAD foobar.txt}
-        \dc{Change latest commit}{git commit --amend}
-\end{tabular}
-
-\begin{tabular}{p{3.2cm} p{4cm}}
-\thead{Undo/Change Commits}
-\dc{revert commited changes}{git revert HEAD "foobar.txt" \lb{}
-                                                                    git checkout HEAD foobar.txt}
-    \dc{check out latest version}{git checkout HEAD foobar.txt}
-        \dc{Change latest commit}{git commit --amend}
-\end{tabular}
-
-\begin{tabular}{p{3.2cm} p{4cm}}
-\thead{Undo/Change Commits}
-\dc{revert commited changes}{git revert HEAD "foobar.txt" \lb{}
-                                                                    git checkout HEAD foobar.txt}
-    \dc{check out latest version}{git checkout HEAD foobar.txt}
-        \dc{Change latest commit}{git commit --amend}
-\end{tabular}
-
-\begin{tabular}{p{3.2cm} p{4cm}}
-\thead{Undo/Change Commits}
-\dc{revert commited changes}{git revert HEAD "foobar.txt" \lb{}
-                                                                    git checkout HEAD foobar.txt}
-    \dc{check out latest version}{git checkout HEAD foobar.txt}
-        \dc{Change latest commit}{git commit --amend}
-\end{tabular}
-
-\begin{tabular}{p{3.2cm} p{4cm}}
-\thead{Undo/Change Commits}
-\dc{revert commited changes}{git revert HEAD "foobar.txt" \lb{}
-                                                                    git checkout HEAD foobar.txt}
-    \dc{check out latest version}{git checkout HEAD foobar.txt}
-        \dc{Change latest commit}{git commit --amend}
-\end{tabular}
-
-\begin{tabular}{p{3.2cm} p{4cm}}
-\thead{Undo/Change Commits}
-\dc{revert commited changes}{git revert HEAD "foobar.txt" \lb{}
-                                                                    git checkout HEAD foobar.txt}
-    \dc{check out latest version}{git checkout HEAD foobar.txt}
-        \dc{Change latest commit}{git commit --amend}
-\end{tabular}
-
-\begin{tabular}{p{3.2cm} p{4cm}}
-\thead{Undo/Change Commits}
-\dc{revert commited changes}{git revert HEAD "foobar.txt" \lb{}
-                                                                    git checkout HEAD foobar.txt}
-    \dc{check out latest version}{git checkout HEAD foobar.txt}
-        \dc{Change latest commit}{git commit --amend}
-\end{tabular}
-
-\begin{tabular}{p{3.2cm} p{4cm}}
-\thead{Undo/Change Commits}
-\dc{revert commited changes}{git revert HEAD "foobar.txt" \lb{}
-                                                                    git checkout HEAD foobar.txt}
-    \dc{check out latest version}{git checkout HEAD foobar.txt}
-        \dc{Change latest commit}{git commit --amend}
-\end{tabular}
-
-\begin{tabular}{p{3.2cm} p{4cm}}
-\thead{Undo/Change Commits}
-\dc{revert commited changes}{git revert HEAD "foobar.txt" \lb{}
-                                                                    git checkout HEAD foobar.txt}
-    \dc{check out latest version}{git checkout HEAD foobar.txt}
-        \dc{Change latest commit}{git commit --amend}
-\end{tabular}
-
-\begin{tabular}{p{3.2cm} p{4cm}}
-\thead{Undo/Change Commits}
-\dc{revert commited changes}{git revert HEAD "foobar.txt" \lb{}
-                                                                    git checkout HEAD foobar.txt}
-    \dc{check out latest version}{git checkout HEAD foobar.txt}
-        \dc{Change latest commit}{git commit --amend}
-\end{tabular}
-
-\begin{tabular}{p{3.2cm} p{4cm}}
-\thead{Undo/Change Commits}
-\dc{revert commited changes}{git revert HEAD "foobar.txt" \lb{}
-                                                                    git checkout HEAD foobar.txt}
-    \dc{check out latest version}{git checkout HEAD foobar.txt}
-        \dc{Change latest commit}{git commit --amend}
-\end{tabular}
-
-\begin{tabular}{p{3.2cm} p{4cm}}
-\thead{Undo/Change Commits}
-\dc{revert commited changes}{git revert HEAD "foobar.txt" \lb{}
-                                                                    git checkout HEAD foobar.txt}
-    \dc{check out latest version}{git checkout HEAD foobar.txt}
-        \dc{Change latest commit}{git commit --amend}
+        \dc{change latest commit}{git commit --amend}
 \end{tabular}
 
 
