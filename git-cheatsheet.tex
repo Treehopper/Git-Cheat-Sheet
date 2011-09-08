@@ -92,6 +92,9 @@
 \thead{Modifications}
     \dc{real short status}{git status -uno -s}
     \dc{concise logging info}{git log -9 --oneline --color=always --decorate=no --stat --graph --date-order}
+    \dc{what happened during my vacation}{git log --since=2weeks}
+   \dc{push local changes on a stack and return to last committed state for now}{\lstinline{git stash && ... && git pop}}
+
 \end{tabular}
 
 \begin{tabular}{p{3.2cm} p{4cm}}
@@ -104,9 +107,16 @@
 \begin{tabular}{p{3.2cm} p{4cm}}
 \thead{Looking in the Past}
     \dc{what did a file look like 9 commits ago}{\lstinline{git show HEAD~9:.muttrc}}
+    \dc{what changed between two commits}{\lstinline{git diff HEAD~2 HEAD~3}}
 \end{tabular}
 
-
+\begin{tabular}{p{3.2cm} p{4cm}}
+\thead{Branching and Merging}
+    \dc{Branch off new Release Branch}{\lstinline{git checkout -b release mainline}}
+    \dc{Merge Release Branch Changes back}{\lstinline{git checkout mainline} \lstinline{git merge release_x}}
+    \dc{replay commits to Feature Branch onto the Mainline}{\lstinline{git rebase featurex mainline}}
+    \dc{mark the nearest commit whose message begins with a keyword as stable}{\lstinline{git tag  "stable" :/"fixed"}}
+\end{tabular}
 
 
 
