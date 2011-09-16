@@ -88,6 +88,16 @@
     \dc{receive changes}{git pull \#(or git fetch)}
 \end{tabular}
 
+\begin{tabular}{p{0.2cm} p{7cm}}
+\thead{\~/.gitconfig}
+   \multicolumn{2}{l}{\scriptsize\ttfamily \lstinline{[alias]}} \\
+    \dc{st}{\lstinline{= status . --untracked-files=no --short}}
+    \dc{ci}{\lstinline{= commit}}
+    \dc{ls}{\lstinline{= ls-files}}
+    \dc{lg }{\lstinline{= --oneline --decorate=no --stat --graph --date-order}}
+    \dc{lol}{\lstinline{= log --graph --decorate --oneline}}
+\end{tabular}
+
 \begin{tabular}{p{3.2cm} p{4cm}}
 \thead{Modifications}
     \dc{real short status}{git status -uno -s}
