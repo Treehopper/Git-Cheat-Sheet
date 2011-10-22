@@ -111,6 +111,7 @@
 \thead{Undo/Change Commits}
 \dc{revert committed changes}{git revert HEAD "foobar.txt" \lb{} git checkout HEAD foobar.txt}
     \dc{check out latest version}{git checkout HEAD foobar.txt}
+    \dc{reset last commit so you can add missing files (don't use after \lstinline{git push}) }{\lstinline{git reset --soft HEAD^}}
         \dc{change latest commit}{git commit --amend}
 \end{tabular}
 
